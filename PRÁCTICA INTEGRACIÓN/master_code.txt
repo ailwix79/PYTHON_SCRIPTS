@@ -1,0 +1,9 @@
+import hashlib
+import threading
+
+for nonce in range(nonce_range[0],nonce_range[1]+1):
+    complete_block = prev_block+str(nonce)
+    res = hashlib.sha256(complete_block.encode('utf-8')).hexdigest()
+        
+    if res[:4]=="0000":
+        nonce_found.append(nonce)
