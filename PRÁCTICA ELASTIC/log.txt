@@ -1,0 +1,42 @@
+GET /trafico-madrid/_settings
+
+PUT /trafico-madrid/_mapping
+{
+  "properties":{
+    "fecha_hora": {"type":"date"},
+    "idelem": {"type":"text"},
+    "descripcion": {"type":"text"},
+    "accesoAsociado": {"type":"text"},
+    "intensidad": {"type":"integer"},
+    "ocupacion": {"type":"integer"},
+    "carga": {"type":"integer"},
+    "nivelServicio": {"type":"integer"},
+    "intensidadSat": {"type":"integer"},
+    "error": {"type":"text"},
+    "subarea": {"type":"text"},
+    "coordenadas":{"type":"geo_point"}
+  }
+}
+
+POST /trafico-madrid/_doc/
+{
+  "fecha_hora":"2015-01-01T12:10:30Z",
+  "idelem":"11111",
+  "descripcion":"Calle Falsa 123. Sentido N-S",
+  "accesoAsociado":"222222",
+  "intensidad":100,
+  "ocupacion":1,
+  "carga":5,
+  "nivelServicio":0,
+  "intensidadSat":3000,
+  "error":"S",
+  "subarea":"2222",
+  "coordenadas": {
+    "lat":41.12,
+    "lon":-71.34
+  }
+}
+
+GET /trafico-madrid/_doc/L6HaNocBTqBZT5cTflrm
+
+DELETE /trafico-madrid/_doc/L6HaNocBTqBZT5cTflrm

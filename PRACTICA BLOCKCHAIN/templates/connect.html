@@ -1,0 +1,16 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+	<br>
+
+	<center>
+	<form action="/main_page" id="textform" method="post">
+		<p>
+		Select Blockchain Node address: <input type="text" name="node_address" placeholder="127.0.0.1:8000">
+		<input type="submit" value="Connect">
+		</p>
+	</form>
+	</center>
+
+{% endblock %}
